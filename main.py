@@ -128,7 +128,6 @@ class YtDlpApp(ctk.CTk):
         self.options_frame.grid_columnconfigure(0, weight=1)
         self.options_frame.grid_columnconfigure(1, weight=1)
 
-        # Opcje dodatkowe - Checkboxy
         self.checkboxes_frame = ctk.CTkFrame(self.card_frame, fg_color="transparent")
         self.checkboxes_frame.pack(fill="x", padx=12, pady=(0, 16))
 
@@ -154,7 +153,6 @@ class YtDlpApp(ctk.CTk):
         )
         self.live_start_checkbox.pack(side="left")
 
-        # Przyciski Akcji
         self.buttons_frame = ctk.CTkFrame(self.card_frame, fg_color="transparent")
         self.buttons_frame.pack(fill="x", padx=12, pady=(4, 8))
 
@@ -185,7 +183,6 @@ class YtDlpApp(ctk.CTk):
         )
         self.vlc_button.pack(side="right")
 
-        # Logi
         self.log_label = ctk.CTkLabel(
             self.main_frame,
             text="// LOGI POBIERANIA / STRUMIENIOWANIA",
