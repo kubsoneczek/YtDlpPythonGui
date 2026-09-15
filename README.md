@@ -12,7 +12,7 @@ PREREQUISITES
 QUICK START (RUN FROM SOURCE)
 
 1. Clone repo:
-git clone [https://github.com/kubsoneczek/YtDlpPythonGui](https://github.com/kubsoneczek/YtDlpPythonGui)
+git clone [https://github.com/kubsoneczek/YtDlpPythonGui.git](https://github.com/kubsoneczek/YtDlpPythonGui.git)
 2. Install dependencies:
 pip install customtkinter
 3. Run app:
