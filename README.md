@@ -1,6 +1,3 @@
-# YtDlpPythonGui
-GUI For Yt-Dlp Pycharm
-
 # YT-DLP DOWNLOADER (GUI)
 
 PREREQUISITES
@@ -11,7 +8,7 @@ PREREQUISITES
 QUICK START (RUN FROM SOURCE)
 
 1. Clone repo:
-git clone [https://github.com/kubsoneczek/YtDlpPythonGui.git](https://www.google.com/search?q=https://github.com/kubsoneczek/YtDlpPythonGui.git)
+git clone [https://github.com/kubsoneczek/YtDlpPythonGui](https://github.com/kubsoneczek/YtDlpPythonGui)
 2. Install dependencies:
 pip install customtkinter
 3. Run app:
