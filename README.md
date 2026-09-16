@@ -1,18 +1,16 @@
 # YT-DLP DOWNLOADER (GUI)
 
-
-# DOWNLOADER HAVE A ONLY POLISH LANGUAGE!!!!!! 🇵🇱 🇵🇱 🇵🇱
-
+DOWNLOADER HAS ONLY POLISH LANGUAGE SUPPORT! 🇵🇱 🇵🇱 🇵🇱
 
 PREREQUISITES
 
 * Python 3.10+
-* Required executables in the root folder: `yt-dlp.exe`, `ffmpeg.exe`, `ffprobe.exe`
+* Required executables in the root folder: `yt-dlp.exe`, `ffmpeg.exe`
 
 QUICK START (RUN FROM SOURCE)
 
 1. Clone repo:
-git clone [https://github.com/kubsoneczek/YtDlpPythonGui.git](https://github.com/kubsoneczek/YtDlpPythonGui.git)
+git clone https://github.com/kubsoneczek/YtDlpPythonGui.git
 2. Install dependencies:
 pip install customtkinter
 3. Run app:
@@ -28,7 +26,12 @@ pyinstaller --noconsole --onefile main.py
 
 FEATURES
 
-* Video: MP4 (144p to 1080p / Best Quality)
-* Audio: MP3, WAV, FLAC (with embedded cover art & metadata)
-* Support for full playlists & live stream downloading from the start
-* Direct VLC stream playback
+* **Video Formats:** MP4, MOV
+* **Video Quality:** 144p to 1080p Full HD / Best Quality
+* **Audio Formats:** MP3, WAV, FLAC
+* **Playback & Playlists:** Direct VLC stream playback & full playlist / live stream support
+* **Speed Limiter:** Adjustable download speed caps (1 MB/s to 20 MB/s)
+* **Tools Tab (🛠️ Narzędzia):**
+  * Thumbnail Downloader (JPG)
+  * Subtitle Downloader (.srt - PL, EN, All)
+  * Local Video Trimmer (lossless FFmpeg cutting)
