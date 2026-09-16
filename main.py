@@ -153,7 +153,7 @@ class YtDlpApp(ctk.CTk):
                                     text_color=self.SUBTEXT_COLOR)
         format_label.grid(row=0, column=0, sticky="w")
         self.format_option = ctk.CTkOptionMenu(opts_frame,
-                                               values=["Wideo (MP4)", "Audio (MP3)", "Audio (WAV)", "Audio (FLAC)"],
+                                               values=["Wideo (MP4)", "Wideo (MOV)", "Audio (MP3)", "Audio (WAV)", "Audio (FLAC)"],
                                                command=self._on_format_change,
                                                font=ctk.CTkFont(family=self.GUI_FONT, size=12), fg_color="#000000",
                                                button_color="#27272A", dropdown_fg_color=self.CARD_BG, height=34)
@@ -533,20 +533,36 @@ class YtDlpApp(ctk.CTk):
         elif "FLAC" in fmt:
             cmd.extend(["-x", "--audio-format", "flac", "--embed-thumbnail", "--add-metadata"])
         else:
+            out_mode = "--recode-video" if "MOV" in fmt else "--merge-output-format"
+            out_fmt = "mov" if "MOV" in fmt else "mp4"
+            no_ad = "[format_id!*=AD]"
+
             if quality == "1080p Full HD":
-                cmd.extend(["-f", "bv*[height<=1080]+ba/b[height<=1080]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=1080]+ba{no_ad}/bv*[height<=1080]+ba/b[height<=1080]", out_mode,
+                     out_fmt])
             elif quality == "720p HD":
-                cmd.extend(["-f", "bv*[height<=720]+ba/b[height<=720]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=720]+ba{no_ad}/bv*[height<=720]+ba/b[height<=720]", out_mode,
+                     out_fmt])
             elif quality == "480p":
-                cmd.extend(["-f", "bv*[height<=480]+ba/b[height<=480]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=480]+ba{no_ad}/bv*[height<=480]+ba/b[height<=480]", out_mode,
+                     out_fmt])
             elif quality == "360p":
-                cmd.extend(["-f", "bv*[height<=360]+ba/b[height<=360]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=360]+ba{no_ad}/bv*[height<=360]+ba/b[height<=360]", out_mode,
+                     out_fmt])
             elif quality == "240p":
-                cmd.extend(["-f", "bv*[height<=240]+ba/b[height<=240]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=240]+ba{no_ad}/bv*[height<=240]+ba/b[height<=240]", out_mode,
+                     out_fmt])
             elif quality == "144p":
-                cmd.extend(["-f", "bv*[height<=144]+ba/b[height<=144]", "--merge-output-format", "mp4"])
+                cmd.extend(
+                    ["-f", f"bv*[height<=144]+ba{no_ad}/bv*[height<=144]+ba/b[height<=144]", out_mode,
+                     out_fmt])
             else:
-                cmd.extend(["-f", "bv*+ba/b", "--merge-output-format", "mp4"])
+                cmd.extend(["-f", f"bv*+ba{no_ad}/bv*+ba/b", out_mode, out_fmt])
 
             cmd.extend(["--embed-thumbnail", "--add-metadata"])
 
