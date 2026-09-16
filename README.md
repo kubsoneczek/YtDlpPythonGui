@@ -6,6 +6,7 @@ PREREQUISITES
 
 * Python 3.10+
 * Required executables in the root folder: `yt-dlp.exe`, `ffmpeg.exe`
+* For the best experience, download the `SF Pro Display Bold` font.
 
 QUICK START (RUN FROM SOURCE)
 
